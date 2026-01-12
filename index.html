@@ -14,15 +14,8 @@
     #datetime {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 32px;
-      color: #1e90ff; /* синий текст */
-
-      /* белый контур */
-      text-shadow:
-        -1px -1px 0 #ffffff,
-         1px -1px 0 #ffffff,
-        -1px  1px 0 #ffffff,
-         1px  1px 0 #ffffff;
-
+      color: #1e90ff;           /* синий цвет */
+      text-shadow: 0 0 5px black;
       padding: 10px;
       white-space: nowrap;
     }
@@ -42,6 +35,16 @@
 
       const hours = pad(now.getHours());
       const minutes = pad(now.getMinutes());
-      const day = pad
+      const day = pad(now.getDate());
+      const month = pad(now.getMonth() + 1);
 
+      document.getElementById('datetime').textContent =
+        `${hours}:${minutes} | ${day}.${month}`;
+    }
 
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+
+</body>
+</html>
