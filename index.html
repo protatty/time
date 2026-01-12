@@ -42,11 +42,12 @@
 
       const hours = pad(now.getHours());
       const minutes = pad(now.getMinutes());
+      const seconds = pad(now.getSeconds());
       const day = pad(now.getDate());
       const month = pad(now.getMonth() + 1);
 
       document.getElementById('datetime').textContent =
-        `${hours}:${minutes} | ${day}.${month}`;
+        `${hours}:${minutes}:${seconds} | ${day}.${month}`;
     }
 
     updateDateTime();
